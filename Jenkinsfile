@@ -2,8 +2,10 @@ pipeline {
     agent any
     tools {
     maven 'myMaven'
-    name: 'JAVA_HOME', type: 'jdk'
     }
+    environment {
+    JAVA_HOME = "/usr/java/openjdk/jdk-11"
+             }
     
     stages {
         stage('Compile and Clean') { 
