@@ -53,7 +53,7 @@ pipeline {
         
         stage('Docker deploy'){
             steps {
-                sh 'docker run -itd -p 8081:8080 shvkmr536/springboot:0.0.3'
+                sh 'docker run -itd -p 8081:8081 shvkmr536/docker_jenkins-pipeline:${BUILD_NUMBER}'
             }
         }
 
