@@ -2,7 +2,9 @@ pipeline {
     agent any
     tools {
     maven 'myMaven'
+    name: 'JAVA_HOME', type: 'jdk'
     }
+    
     stages {
         stage('Compile and Clean') { 
             steps {
