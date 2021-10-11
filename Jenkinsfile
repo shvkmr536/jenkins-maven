@@ -1,5 +1,8 @@
 pipeline {
-    agent any 
+    agent any
+    environment {
+    MAVEN_HOME = tool 'myMaven'
+  } 
     stages {
         stage('Compile and Clean') { 
             steps {
