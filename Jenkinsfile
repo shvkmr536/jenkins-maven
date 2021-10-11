@@ -4,7 +4,7 @@ pipeline {
     maven 'myMaven'
     }
     environment {
-    JAVA_HOME = "/usr/java/openjdk/jdk-11"
+    JAVA_HOME = "/usr/lib/jvm/java-1.11.0-openjdk-amd64"
              }
     
     stages {
