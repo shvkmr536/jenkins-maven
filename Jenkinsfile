@@ -10,7 +10,6 @@ pipeline {
     stages {
         stage('Compile and Clean') { 
             steps {
-
                 sh "mvn clean compile"
             }
         }
@@ -31,8 +30,7 @@ pipeline {
                 sh "mvn package"
             }
         }
-
-
+        
         stage('Build Docker image'){
             steps {
                 sh 'docker build -t shvkmr536/docker_jenkins-pipeline:${BUILD_NUMBER} .'
@@ -40,7 +38,6 @@ pipeline {
         }
 
         stage('Docker Login'){
-            
             steps {
                  withCredentials([string(credentialsId: 'DockerHub', variable: 'dockerpwd')]) {
                     sh "docker login -u shvkmr536 -p ${dockerpwd}"
